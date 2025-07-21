@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:skoolution/app/modules/home/views/home_view.dart';
 import 'package:skoolution/app/modules/signup/views/pages/step_tow_signup.dart';
 import 'package:skoolution/app/modules/signup/views/signup_view.dart';
 
@@ -8,6 +9,7 @@ import '../../../config/app_constants.dart';
 import '../../../config/app_images.dart';
 import '../../../widgets/button.dart';
 import '../../../widgets/text_filed.dart';
+import '../../verification_code/views/verification_code_view.dart';
 // import '../controllers/login_controller.dart';
 
 class LoginView extends StatefulWidget {
@@ -20,6 +22,11 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController smsController = TextEditingController();
+
+  bool isSMSActive = false;
+  bool isEmailActive = false;
+
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool rememberMe = false;
@@ -27,6 +34,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           // 🔹 Banner Section
@@ -134,7 +142,115 @@ class _LoginViewState extends State<LoginView> {
                         ],
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+                          ),
+                          builder: (BuildContext context) {
+                            return StatefulBuilder(
+                              builder: (context, setState) {
+                                return Padding(
+                                  padding: EdgeInsets.only(
+                                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                                    left: 20,
+                                    right: 20,
+                                    top: 20,
+                                  ),
+                                  child: Form(
+                                    key: _formKey,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius: BorderRadius.circular(5),
+                                          ),
+                                          width: 50,
+                                          height: 3,
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          'Forgot password?',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Select a contact to reset your password.',
+                                          style: GoogleFonts.inter(fontSize: 13),
+                                        ),
+                                        const SizedBox(height: 16),                // Email field
+                                        TextFiledZone(
+                                          controller: emailController,
+                                          hint: "Send via Email",
+                                          inputType: TextInputType.emailAddress,
+                                          enabled: !isSMSActive,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              isEmailActive = value.isNotEmpty;
+                                              if (isEmailActive) isSMSActive = false;
+                                            });
+                                          },
+                                          prefixIcon: Icon(Icons.email, color: Colors.blue),
+                                          suffixIcon: isEmailActive
+                                              ? const Icon(Icons.verified, color: Colors.blue)
+                                              : null, label: '',
+                                        ),
+
+                                        // SMS field
+                                        TextFiledZone(
+                                          controller: smsController,
+                                          hint: "Send via SMS",
+                                          inputType: TextInputType.phone,
+                                          enabled: !isEmailActive,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              isSMSActive = value.isNotEmpty;
+                                              if (isSMSActive) isEmailActive = false;
+                                            });
+                                          },
+                                          prefixIcon: Icon(Icons.phone, color: Colors.blue),
+                                          suffixIcon: isSMSActive
+                                              ? const Icon(Icons.verified, color: Colors.blue)
+                                              : null, label: '',
+                                        ),
+                                        
+                                        const SizedBox(height: 20),
+                                          CustomButton(
+                                            text: "Continue",
+                                            onPressed: () {
+                                              if ((emailController.text.isEmpty &&
+                                                      smsController.text.isEmpty) ||
+                                                  (emailController.text.isNotEmpty &&
+                                                      smsController.text.isNotEmpty)) {
+                                                Get.snackbar(
+                                                  "Error",
+                                                  "Please enter either Email or SMS, not both.",
+                                                  backgroundColor: Colors.orange,
+                                                  colorText: Colors.white,
+                                                );
+                                              } else {
+                                                Get.to(()=>VerificationCodeView(contact: isSMSActive?smsController.text:emailController.text));
+                                              }
+                                            },
+                                          ),
+                                        const SizedBox(height: 30),
+                                      ]
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        );
+
+
+                        },
                         child: Text(
                           'Mot de passe oublié ?',
                           style: GoogleFonts.inter(

@@ -8,6 +8,11 @@ class TextFiledZone extends StatelessWidget {
   final bool obscureText;
   final bool hasError;
   final TextEditingController controller;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
+  final bool? enabled;
+  final Function(String)? onChanged;
+  final String? Function(String?)? validator;
 
   const TextFiledZone({
     super.key,
@@ -17,6 +22,11 @@ class TextFiledZone extends StatelessWidget {
     this.inputType = TextInputType.text,
     this.obscureText = false,
     this.hasError = false,
+    this.enabled = true,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.onChanged,
+    this.validator,
   });
 
   @override
@@ -33,21 +43,29 @@ class TextFiledZone extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        TextField(
+        TextFormField(
           controller: controller,
+          enabled: enabled,
           keyboardType: inputType,
           obscureText: obscureText,
+          onChanged: onChanged,
+          validator: validator,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(
-              color: Colors.grey,
-            ),
+            hintStyle: const TextStyle(color: Colors.grey),
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.grey),
+              borderSide: BorderSide(
+                color: hasError ? Colors.red : Colors.grey,
+              ),
               borderRadius: BorderRadius.circular(8),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xFF054BB4), width: 2),
+              borderSide: BorderSide(
+                color: hasError ? Colors.red : const Color(0xFF054BB4),
+                width: 2,
+              ),
               borderRadius: BorderRadius.circular(8),
             ),
             errorBorder: OutlineInputBorder(
