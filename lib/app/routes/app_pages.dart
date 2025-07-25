@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/cours/bindings/cours_binding.dart';
+import '../modules/cours/views/cours_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/MainWrapper.dart';
 import '../modules/home/views/home_view.dart';
@@ -17,7 +19,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -46,6 +48,11 @@ class AppPages {
       name: _Paths.RESET_PASSWORD,
       page: () => ResetPasswordView(),
       binding: ResetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.COURS,
+      page: () => CoursView(),
+      binding: CoursBinding(),
     ),
   ];
 }

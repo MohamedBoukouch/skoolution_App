@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_images.dart';
@@ -6,6 +7,7 @@ import 'package:skoolution/app/modules/home/views/home_view.dart';
 
 import '../../../widgets/button.dart';
 import '../../../widgets/text_filed.dart';
+import '../../home/views/MainWrapper.dart';
 import '../controllers/reset_password_controller.dart';
 
 class ResetPasswordView extends GetView<ResetPasswordController> {
@@ -149,7 +151,7 @@ class ResetPasswordView extends GetView<ResetPasswordController> {
                                           height: 3,
                                         ),
                                         const SizedBox(height: 20),
-                                        Image.asset(AppImages.congratolation),
+                                        SvgPicture.asset(AppImages.congratolation),
                                         const SizedBox(height: 20),
                                         Text(
                                           'Password changed.',
@@ -170,7 +172,7 @@ class ResetPasswordView extends GetView<ResetPasswordController> {
                                           CustomButton(
                                             text: "Continue",
                                             onPressed: () {
-                                              Get.off(()=>HomeView());
+                                              Get.off(()=>MainWrapper());
                                             },
                                           ),
                                         const SizedBox(height: 30),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_images.dart';
@@ -34,7 +35,7 @@ class _StepTowSignupState extends State<StepTowSignup> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppImages.blueLogo),
+              SvgPicture.asset(AppImages.blueLogo),
               const SizedBox(height: 16),
               Text(
                 "Sign Up",

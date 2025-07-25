@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_images.dart';
@@ -26,7 +27,7 @@ class SignupView extends GetView<SignupController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AppImages.blueLogo),
+            SvgPicture.asset(AppImages.blueLogo),
             SizedBox(height: 16),
             Text(
               "Sign Up",

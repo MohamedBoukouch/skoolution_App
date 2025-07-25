@@ -35,7 +35,6 @@ class Slide extends StatelessWidget {
                 offset: Offset(0, 2), // small vertical shift
               ),
             ],
-
           ),
           child: Row(
             children: [

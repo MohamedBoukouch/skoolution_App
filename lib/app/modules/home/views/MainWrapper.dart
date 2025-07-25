@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:skoolution/app/config/app_images.dart';
+import 'package:skoolution/app/modules/cours/views/cours_view.dart';
 import 'package:skoolution/app/modules/home/views/home_view.dart';
 import 'package:skoolution/app/modules/login/views/login_view.dart';
-import 'package:skoolution/app/modules/signup/views/signup_view.dart';
 
 class MainWrapper extends StatefulWidget {
   const MainWrapper({Key? key}) : super(key: key);
@@ -41,45 +42,112 @@ class _MainWrapperState extends State<MainWrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true, // For better floating nav bar appearance
-      body: PageView(
-        controller: pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children:  [
-          HomeView(),
-          SignupView(),
-          LoginView(),
-        ],
+      backgroundColor: Colors.white,
+      extendBody: true, // This is important for proper positioning
+      body: SafeArea(
+        bottom: false, // Allows content to go behind the navigation bar
+        child: PageView(
+          controller: pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight), // Add space for nav bar
+              child: const HomeView(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight),
+              child: CoursView(),
+            ),
+            const LoginView(),
+            const LoginView(),
+          ],
+        ),
       ),
       bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: currentPage.value,
-          onTap: changePage,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.grey,
-          items:  [
-            BottomNavigationBarItem(
-            icon: Image.asset(AppImages.homeInactive),
-            activeIcon: Image.asset(AppImages.homeActive),
-            label: 'Accueil',
+        () => Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 10,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
+            child: BottomNavigationBar(
+              backgroundColor: Colors.white,
+              currentIndex: currentPage.value,
+              onTap: changePage,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: Colors.blue,
+              unselectedItemColor: Colors.grey,
+              elevation: 0,
+              items: [
+                BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    AppImages.homeInactive,
+                    width: 24,
+                    height: 24,
+                    color: Colors.grey,
+                  ),
+                  activeIcon: SvgPicture.asset(
+                    AppImages.homeActive,
+                    width: 24,
+                    height: 24,
+                    color: Colors.blue,
+                  ),
+                  label: 'Accueil',
+                ),
+                BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    AppImages.hatInactive,
+                    width: 24,
+                    height: 24,
+                    color: Colors.grey,
+                  ),
+                  activeIcon: SvgPicture.asset(
+                    AppImages.hatActive, // Fixed: Changed from hatInactive to hatActive
+                    width: 24,
+                    height: 24,
+                    color: Colors.blue,
+                  ),
+                  label: 'Matières',
+                ),
+                BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    AppImages.statistiqueInactive,
+                    width: 24,
+                    height: 24,
+                    color: Colors.grey,
+                  ),
+                  activeIcon: SvgPicture.asset(
+                    AppImages.statistiqueActive, // Fixed: Changed from inactive to active
+                    width: 24,
+                    height: 24,
+                    color: Colors.blue,
+                  ),
+                  label: 'Progression',
+                ),
+                BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    AppImages.profileInactive,
+                    width: 24,
+                    height: 24,
+                    color: Colors.grey,
+                  ),
+                  activeIcon: SvgPicture.asset(
+                    AppImages.profileActive, // Fixed: Changed from inactive to active
+                    width: 24,
+                    height: 24,
+                    color: Colors.blue,
+                  ),
+                  label: 'Profil',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(AppImages.hatInactive),
-              activeIcon: Image.asset(AppImages.hatActive),
-              label: 'Matières',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(AppImages.statistiqueInactive),
-              activeIcon: Image.asset(AppImages.statistiqueActive),
-              label: 'Progression ',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(AppImages.profileInactive),
-              activeIcon: Image.asset(AppImages.profileActive),
-              label: 'Profil',
-            ),
-          ],
+          ),
         ),
       ),
     );

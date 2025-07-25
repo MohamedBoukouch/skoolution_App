@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_images.dart'; // for image paths
 
@@ -57,7 +58,7 @@ class CustomButton extends StatelessWidget {
             if (isBack && iconPath != null)
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
-                child: Image.asset(iconPath, height: 20),
+                child: SvgPicture.asset(iconPath, height: 20),
               ),
             Text(
               text,
@@ -70,7 +71,7 @@ class CustomButton extends StatelessWidget {
             if (isNext && iconPath != null)
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
-                child: Image.asset(iconPath, height: 20),
+                child: SvgPicture.asset(iconPath, height: 20),
               ),
           ],
         ),

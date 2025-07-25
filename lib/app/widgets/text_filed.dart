@@ -34,6 +34,7 @@ class TextFiledZone extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        label.isNotEmpty?
         Text(
           label,
           style: GoogleFonts.inter(
@@ -41,7 +42,7 @@ class TextFiledZone extends StatelessWidget {
             color: const Color.fromARGB(255, 39, 38, 38),
             fontSize: 16,
           ),
-        ),
+        ):SizedBox.shrink() ,
         const SizedBox(height: 8),
         TextFormField(
           controller: controller,
