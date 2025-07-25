@@ -44,7 +44,7 @@ class _LoginViewState extends State<LoginView> {
                 width: AppConstant.width,
                 height: AppConstant.height * 0.4,
                 child: Image.asset(
-                  AppImages.login_banner,
+                  AppImages.loginBanner,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -68,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Image.asset(AppImages.white_logo, height: 40),
+                    Image.asset(AppImages.whiteLogo, height: 40),
                     const SizedBox(height: 7),
                     Text(
                       "La platefome d’éducation n°1 au Maroc.",

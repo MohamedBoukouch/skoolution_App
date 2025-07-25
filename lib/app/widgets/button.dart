@@ -27,9 +27,9 @@ class CustomButton extends StatelessWidget {
 
     // Pick icon based on text
     final iconPath = isBack
-        ? AppImages.back_button
+        ? AppImages.backButton
         : isNext
-            ? AppImages.next_button
+            ? AppImages.nextButton
             : null;
 
     return SizedBox(

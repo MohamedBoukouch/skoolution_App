@@ -8,6 +8,7 @@ abstract class Routes {
   static const SIGNUP = _Paths.SIGNUP;
   static const VERIFICATION_ODE = _Paths.VERIFICATION_ODE;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
+  static const MAIN_WRAPPER = _Paths.MAIN_WRAPPER;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const SIGNUP = '/signup';
   static const VERIFICATION_ODE = '/verification-ode';
   static const RESET_PASSWORD = '/reset-password';
+  static const MAIN_WRAPPER = '/main-wrapper';
 }

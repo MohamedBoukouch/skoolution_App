@@ -21,11 +21,12 @@ class SignupView extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AppImages.blue_logo),
+            Image.asset(AppImages.blueLogo),
             SizedBox(height: 16),
             Text(
               "Sign Up",
