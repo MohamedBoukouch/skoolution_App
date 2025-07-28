@@ -3,7 +3,10 @@ class AppImages{
 
   static const whiteLogo = 'assets/app_logo/white_logo.svg';
   static const blueLogo = 'assets/app_logo/blue_logo.svg';
+
+  //images
   static const loginBanner = 'assets/images/login_banner.png';
+  static const profile = 'assets/images/profile.jpg';
   
   //Icons
   static const backButton = 'assets/icons/back_button.svg';
@@ -19,6 +22,15 @@ class AppImages{
   static const profileInactive = 'assets/icons/buttom_navigation/profile_inactive.svg';
   static const statistiqueActive = 'assets/icons/buttom_navigation/statistique_active.png';
   static const statistiqueInactive = 'assets/icons/buttom_navigation/statistique_inactive.svg';
+
+  //Profile Icons
+  static const profileProfile = 'assets/icons/profile/profile.svg';
+  static const about = 'assets/icons/profile/about.svg';
+  static const condition = 'assets/icons/profile/condition.svg';
+  static const langue = 'assets/icons/profile/langue.svg';
+  static const notificationProfile = 'assets/icons/profile/notification.svg';
+  static const supporte = 'assets/icons/profile/support.svg';
+  static const theme = 'assets/icons/profile/theme.svg';
 
 
   static const congratolation = 'assets/icons/congratplation.svg';

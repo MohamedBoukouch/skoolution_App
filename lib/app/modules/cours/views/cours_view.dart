@@ -8,6 +8,7 @@ import 'package:skoolution/app/widgets/lecon_container.dart';
 
 import '../../../config/app_constants.dart';
 import '../../../widgets/text_filed.dart';
+import '../../notification/views/notification_view.dart';
 import '../controllers/cours_controller.dart';
 import '../widgets/slideContainer.dart';
 
@@ -34,7 +35,9 @@ class CoursView extends GetView<CoursController> {
         actions: [
           IconButton(
             icon: SvgPicture.asset(AppImages.activeNotification, width: 20),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>NotificationView());
+            },
           ),
         ],
       ),

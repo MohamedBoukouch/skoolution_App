@@ -7,6 +7,11 @@ import '../modules/home/views/MainWrapper.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/notification/bindings/notification_binding.dart';
+import '../modules/notification/views/notification_view.dart';
+import '../modules/profil/bindings/profil_binding.dart';
+import '../modules/profil/pages/personal_data.dart';
+import '../modules/profil/views/profil_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -19,7 +24,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
@@ -53,6 +58,16 @@ class AppPages {
       name: _Paths.COURS,
       page: () => CoursView(),
       binding: CoursBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFIL,
+      page: () => PersonalData(),
+      binding: ProfilBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () =>  NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }

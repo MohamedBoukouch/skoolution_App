@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_constants.dart';
+import 'package:skoolution/app/modules/notification/views/notification_view.dart';
 
 import '../../../config/app_images.dart';
 import '../../../widgets/lecon_container.dart';
+import '../../notification/widgets/notifiation_box.dart';
 import '../widgets/slide.dart';
 
 class HomeView extends StatelessWidget {
@@ -26,7 +29,9 @@ class HomeView extends StatelessWidget {
         actions: [
           IconButton(
             icon: SvgPicture.asset(AppImages.activeNotification, width: 20), 
-            onPressed: () {},
+            onPressed: () {
+              Get.to(NotificationView());
+            },
           ),
         ],
       ),

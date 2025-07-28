@@ -10,6 +10,8 @@ abstract class Routes {
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
   static const MAIN_WRAPPER = _Paths.MAIN_WRAPPER;
   static const COURS = _Paths.COURS;
+  static const PROFIL = _Paths.PROFIL;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const RESET_PASSWORD = '/reset-password';
   static const MAIN_WRAPPER = '/main-wrapper';
   static const COURS = '/cours';
+  static const PROFIL = '/profil';
+  static const NOTIFICATION = '/notification';
 }
