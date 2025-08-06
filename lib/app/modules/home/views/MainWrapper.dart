@@ -7,6 +7,8 @@ import 'package:skoolution/app/modules/home/views/home_view.dart';
 import 'package:skoolution/app/modules/login/views/login_view.dart';
 import 'package:skoolution/app/modules/profil/views/profil_view.dart';
 
+import '../../progression/views/progression_view.dart';
+
 class MainWrapper extends StatefulWidget {
   const MainWrapper({Key? key}) : super(key: key);
 
@@ -59,7 +61,10 @@ class _MainWrapperState extends State<MainWrapper> {
               padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight),
               child: CoursView(),
             ),
-            const LoginView(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight),
+              child: ProgressionView(),
+            ),
             Padding(
               padding: const EdgeInsets.only(bottom: kBottomNavigationBarHeight),
               child: ProfilView(),

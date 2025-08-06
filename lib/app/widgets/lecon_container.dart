@@ -10,15 +10,19 @@ class LeconContainer extends StatelessWidget {
   final String subtitleText;
   final String imagePath;
   final Color loadingColor;
+  final Color? svgColor;
+  final bool isInverse; // New parameter to control text order
   
   const LeconContainer({
     super.key,
-    this.loading, // Now optional
+    this.loading,
     this.iconBackgroundColor = Colors.amber,
     this.loadingColor = Colors.amber,
     required this.titleText,
     required this.subtitleText,
     required this.imagePath,
+    this.svgColor,
+    this.isInverse = true, // Default to true for backward compatibility
   });
 
   @override
@@ -56,6 +60,7 @@ class LeconContainer extends StatelessWidget {
                           imagePath,
                           width: 15,
                           height: 15,
+                          color: svgColor,
                         )
                       : Image.asset(
                           imagePath,
@@ -67,7 +72,7 @@ class LeconContainer extends StatelessWidget {
                           imagePath,
                           width: 15,
                           height: 15,
-                          color: Colors.white,
+                          color: svgColor ?? Colors.white,
                         )
                       : Image.asset(
                           imagePath,
@@ -85,92 +90,121 @@ class LeconContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (loading != null)
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        subtitleText,
-                        style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w800,
-                          fontSize: 10,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        titleText,
-                        style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  )
-                else
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        titleText,
-                        style: GoogleFonts.inter(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
-                        ),
-                        
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        subtitleText,
-                        style: GoogleFonts.inter(
-                          fontSize: 15,
-                          color: Colors.grey,
-                        ),
-                      ), 
-                    ],
-                  ),
-
+                ...(loading != null
+                    ? [_buildLoadingText()]
+                    : [isInverse ? _buildNormalText() : _buildInverseText()]),
                 const SizedBox(height: 8),
-                
-                // Only show progress section if loading is not null
-                if (loading != null)
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 8,
-                        child: LinearProgressIndicator(
-                          value: loading! / 100,
-                          backgroundColor: Colors.grey.withOpacity(0.2),
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            loading! >= 100 
-                              ? const Color.fromARGB(255, 13, 255, 21) 
-                              : loadingColor,
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                          minHeight: 8,
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Text(
-                            "$loading%",
-                            style: GoogleFonts.inter(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                if (loading != null) _buildProgressIndicator(),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildNormalText() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          titleText,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.bold,
+            fontSize: 19, // Increased from 17
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          subtitleText,
+          style: GoogleFonts.inter(
+            fontSize: 16, // Increased from 15
+            color: Colors.grey,
+          ),
+        ), 
+      ],
+    );
+  }
+
+  Widget _buildInverseText() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          subtitleText,
+          style: GoogleFonts.inter(
+            fontSize: 16, // Increased size
+            color: Colors.grey,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          titleText,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.bold,
+            fontSize: 19, // Increased size
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildLoadingText() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          isInverse ? subtitleText : titleText,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.w800,
+            fontSize: 12, // Increased from 10
+            color: Colors.grey,
+          ),
+        ),
+        const SizedBox(height: 6), // Increased from 4
+        Text(
+          isInverse ? titleText : subtitleText,
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.w700,
+            fontSize: 12, // Increased from 10
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProgressIndicator() {
+    return Row(
+      children: [
+        Expanded(
+          flex: 8,
+          child: LinearProgressIndicator(
+            value: loading! / 100,
+            backgroundColor: Colors.grey.withOpacity(0.2),
+            valueColor: AlwaysStoppedAnimation<Color>(
+              loading! >= 100 
+                ? const Color.fromARGB(255, 13, 255, 21) 
+                : loadingColor,
+            ),
+            borderRadius: BorderRadius.circular(10),
+            minHeight: 8,
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              "$loading%",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 13, // Increased from 12
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

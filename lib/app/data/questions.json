@@ -1,0 +1,101 @@
+[
+    {
+      "title": "Limites et continuité",
+      "chapter": "Chapitre 2 • Test 2",
+      "question": "Soit la fonction\n\n\\( f(x) = \\frac{x^2 + 1}{x^2 - 3x + 2} \\)\n\nQuelle est l'assertion vraie concernant les limites ?",
+      "options": [
+        {"text": "\\( \\lim_{x \\to +\\infty} f(x) = 1 \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( \\lim_{x \\to +\\infty} f(x) = -1 \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( \\lim_{x \\to -\\infty} f(x) = 0 \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( \\lim_{x \\to -\\infty} f(x) = 2 \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Dérivées",
+      "chapter": "Chapitre 3 • Test 1",
+      "question": "Quelle est la dérivée de \\( f(x) = e^{2x} \\cdot \\sin(x) \\) ?",
+      "options": [
+        {"text": "\\( e^{2x}(2\\sin(x) + \\cos(x)) \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( e^{2x}(\\sin(x) + \\cos(x)) \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( 2e^{2x}\\sin(x) \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( e^{2x}\\cos(x) \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Intégrales complexes",
+      "chapter": "Chapitre 4 • Test 3",
+      "question": "Calculer l'intégrale \\( \\int_{0}^{\\pi} e^x \\sin(x) \\, dx \\)",
+      "options": [
+        {"text": "\\( \\frac{e^\\pi + 1}{2} \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( e^\\pi - 1 \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( \\frac{e^\\pi - 1}{2} \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( \\frac{e^\\pi + 1}{4} \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Équations différentielles",
+      "chapter": "Chapitre 5 • Test 1",
+      "question": "La solution générale de \\( y'' - 4y' + 4y = 0 \\) est :",
+      "options": [
+        {"text": "\\( y(x) = (C_1 + C_2 x)e^{2x} \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( y(x) = C_1 e^{2x} + C_2 e^{-2x} \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( y(x) = C_1 \\cos(2x) + C_2 \\sin(2x) \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( y(x) = C_1 e^{2x} + C_2 x e^{2x} \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Algèbre linéaire",
+      "chapter": "Chapitre 6 • Test 2",
+      "question": "Soit \\( A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} \\). Quel est son polynôme caractéristique ?",
+      "options": [
+        {"text": "\\( \\lambda^2 - 5\\lambda - 2 \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( \\lambda^2 + 5\\lambda - 2 \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( \\lambda^2 - 3\\lambda - 10 \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( \\lambda^2 - 5\\lambda + 2 \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Probabilités",
+      "chapter": "Chapitre 7 • Test 3",
+      "question": "Soit X une variable aléatoire suivant une loi normale \\( \\mathcal{N}(0,1) \\). Calculer \\( P(-1 \\leq X \\leq 1) \\)",
+      "options": [
+        {"text": "Environ 0.6827", "isCorrect": true, "letter": "A"},
+        {"text": "Environ 0.9545", "isCorrect": false, "letter": "B"},
+        {"text": "Environ 0.9973", "isCorrect": false, "letter": "C"},
+        {"text": "Environ 0.5000", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Analyse complexe",
+      "chapter": "Chapitre 8 • Test 1",
+      "question": "Le résidu de \\( f(z) = \\frac{e^z}{(z-1)^2} \\) en \\( z = 1 \\) est :",
+      "options": [
+        {"text": "\\( e \\)", "isCorrect": true, "letter": "A"},
+        {"text": "\\( 0 \\)", "isCorrect": false, "letter": "B"},
+        {"text": "\\( 1 \\)", "isCorrect": false, "letter": "C"},
+        {"text": "\\( e^{-1} \\)", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Topologie",
+      "chapter": "Chapitre 9 • Test 2",
+      "question": "L'ensemble \\( \\{ \\frac{1}{n} \\mid n \\in \\mathbb{N}^* \\} \\cup \\{0\\} \\) est :",
+      "options": [
+        {"text": "Compact", "isCorrect": true, "letter": "A"},
+        {"text": "Ouvert", "isCorrect": false, "letter": "B"},
+        {"text": "Dense dans ℝ", "isCorrect": false, "letter": "C"},
+        {"text": "Non borné", "isCorrect": false, "letter": "D"}
+      ]
+    },
+    {
+      "title": "Géométrie différentielle",
+      "chapter": "Chapitre 10 • Test 3",
+      "question": "La courbure de la courbe \\( y = x^2 \\) au point (0,0) est :",
+      "options": [
+        {"text": "2", "isCorrect": true, "letter": "A"},
+        {"text": "0", "isCorrect": false, "letter": "B"},
+        {"text": "1", "isCorrect": false, "letter": "C"},
+        {"text": "∞", "isCorrect": false, "letter": "D"}
+      ]
+    }
+  ]

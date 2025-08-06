@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skoolution/app/config/app_images.dart';
-import 'package:skoolution/app/modules/cours/pages/cour_fetch.dart';
+import 'package:skoolution/app/modules/cours/pages/test_fetch.dart';
 import 'package:skoolution/app/widgets/lecon_container.dart';
 
 import '../../../config/app_constants.dart';
@@ -13,8 +13,8 @@ import '../../notification/views/notification_view.dart';
 import '../controllers/cours_controller.dart';
 import '../widgets/slideContainer.dart';
 
-class CoursView extends GetView<CoursController> {
-  CoursView({super.key});
+class CourFetch extends GetView<CoursController> {
+  CourFetch({super.key});
 
 
   final TextEditingController searchController = TextEditingController();
@@ -77,14 +77,14 @@ class CoursView extends GetView<CoursController> {
                       text: "1er semestre",
                       isClicked: false, 
                       onTap: () {
-                        print("Sciences");
+                        print("1er semestre");
                       },
                     ),
                     SideContainer(
                       text: "2eme semestre",
                       isClicked: false, 
                       onTap: () {
-                        print("Container tapped!");
+                        print("2eme semestre");
                       },
                     ),
 
@@ -92,40 +92,55 @@ class CoursView extends GetView<CoursController> {
                 ),
               ),
               SizedBox(height: 25,),
-              GestureDetector(
+              InkWell(
                 onTap: (){
-                  Get.to(()=>CourFetch());
+                  Get.to(()=>TestFetch());
                 },
                 child: LeconContainer(
-                  iconBackgroundColor: Color(0xFF054BB4), 
-                  titleText: "Mathématiques", 
-                  subtitleText: "12 LEÇON", 
+                  loading: 40, 
+                  iconBackgroundColor: Color(0xFFE1EBF4), 
+                  loadingColor: Color(0xFF135EA5), 
+                  titleText: "Limites et continuité", 
+                  subtitleText: "3 Chapitres", 
                   imagePath: AppImages.racine, 
+                  isInverse: true,
                 ),
               ),
               LeconContainer(
-                iconBackgroundColor: Color(0xFF455A64), 
-                titleText: "Chimie", 
-                subtitleText: "12 LEÇON", 
-                imagePath: AppImages.physique, 
+                loading: 40,
+                iconBackgroundColor: Color(0xFFE1EBF4), 
+                loadingColor: Color(0xFF135EA5),
+                titleText: "Dérivation et étude de fon...", 
+                subtitleText: "3 Chapitres", 
+                imagePath: AppImages.racine,
+                svgColor:Color(0xFF135EA5)
               ),
               LeconContainer(
-                iconBackgroundColor: Color(0xFF306D8B), 
-                titleText: "S.V.T", 
-                subtitleText: "12 LEÇON", 
-                imagePath: AppImages.chemie, 
+                loading: 40,
+                iconBackgroundColor: Color(0xFFE1EBF4), 
+                loadingColor: Color(0xFF135EA5),
+                titleText: "Dérivation et étude de fon...", 
+                subtitleText: "3 Chapitres", 
+                imagePath: AppImages.racine,
+                svgColor:Color(0xFF135EA5) 
               ),
               LeconContainer(
-                iconBackgroundColor: Color(0xFF007B55), 
-                titleText: "Chimie", 
-                subtitleText: "12 LEÇON", 
-                imagePath: AppImages.svt, 
+                loading: 40,
+                iconBackgroundColor: Color(0xFFE1EBF4), 
+                loadingColor: Color(0xFF135EA5),
+                titleText: "Les suites numériques", 
+                subtitleText: "3 Chapitres", 
+                imagePath: AppImages.racine,
+                svgColor:Color(0xFF135EA5) 
               ),
               LeconContainer(
-                iconBackgroundColor: Color(0xFF8E24AA), 
-                titleText: "Anglais", 
-                subtitleText: "12 LEÇON", 
-                imagePath: AppImages.language, 
+                loading: 40,
+                iconBackgroundColor: Color(0xFFE1EBF4), 
+                loadingColor: Color(0xFF135EA5),
+                titleText: "Les fonctions logarithmes", 
+                subtitleText: "3 Chapitres", 
+                imagePath: AppImages.racine,
+                svgColor:Color(0xFF135EA5) 
               ),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:skoolution/app/modules/cours/pages/test_fetch.dart';
 
 import '../modules/cours/bindings/cours_binding.dart';
 import '../modules/cours/views/cours_view.dart';
@@ -12,6 +13,8 @@ import '../modules/notification/views/notification_view.dart';
 import '../modules/profil/bindings/profil_binding.dart';
 import '../modules/profil/pages/personal_data.dart';
 import '../modules/profil/views/profil_view.dart';
+import '../modules/progression/bindings/progression_binding.dart';
+import '../modules/progression/views/progression_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -56,7 +59,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.COURS,
-      page: () => CoursView(),
+      page: () => TestFetch(),
       binding: CoursBinding(),
     ),
     GetPage(
@@ -66,8 +69,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.NOTIFICATION,
-      page: () =>  NotificationView(),
+      page: () => NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROGRESSION,
+      page: () => const ProgressionView(),
+      binding: ProgressionBinding(),
     ),
   ];
 }

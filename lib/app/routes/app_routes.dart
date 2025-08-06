@@ -12,6 +12,7 @@ abstract class Routes {
   static const COURS = _Paths.COURS;
   static const PROFIL = _Paths.PROFIL;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const PROGRESSION = _Paths.PROGRESSION;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const COURS = '/cours';
   static const PROFIL = '/profil';
   static const NOTIFICATION = '/notification';
+  static const PROGRESSION = '/progression';
 }
