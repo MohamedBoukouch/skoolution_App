@@ -1,7 +1,8 @@
 # Skoolution
 
 <p align="center">
-  <img width="256" height="256" alt="Skoolution Logo" src="PASTE_YOUR_LOGO_URL_HERE" />
+  <img width="216" height="44" alt="LOGO" src="https://github.com/user-attachments/assets/d6d03d8b-3360-4e0d-bee1-f9896e8e792c" />
+
 </p>
 
 <h3 align="center">
@@ -60,15 +61,26 @@ This project started from a complete **Figma UI design**, which is being turned 
 </table>
 
 ---
-
 ## <img src="https://api.iconify.design/mdi/monitor-screenshot.svg?color=%236366F1" width="24" style="vertical-align:middle"/> App Screenshots
 
 <p align="center">
-  <img src="https://placehold.co/640x360/1E1B4B/6366F1?text=Onboarding" width="230" />
-  <img src="https://placehold.co/640x360/1E1B4B/6366F1?text=Subject+Selection" width="230" />
-  <img src="https://placehold.co/640x360/1E1B4B/6366F1?text=Diagnostic+Test" width="230" />
-  <img src="https://placehold.co/640x360/1E1B4B/6366F1?text=Level+Result" width="230" />
-  <img src="https://placehold.co/640x360/1E1B4B/6366F1?text=Roadmap" width="230" />
+  <img width="180" alt="1" src="https://github.com/user-attachments/assets/9c26c117-affa-45ac-9ab0-2ed80b9c8c15" />
+  <img width="180" alt="2" src="https://github.com/user-attachments/assets/6902a6bb-a649-410f-be70-79fd1aa874ed" />
+  <img width="180" alt="3" src="https://github.com/user-attachments/assets/e01ce50e-9ed0-4a1d-98ac-147dbc53a788" />
+  <img width="180" alt="4" src="https://github.com/user-attachments/assets/5fb7c230-fd60-4fcb-acb3-54a1a4d276b5" />
+  <img width="180" alt="5" src="https://github.com/user-attachments/assets/3e1308b2-c4a4-4fcb-b1e3-4b6ecdda8798" />
+  <br/>
+  <img width="180" alt="6" src="https://github.com/user-attachments/assets/b94925c1-854b-4474-a539-f0c0c2acaade" />
+  <img width="180" alt="7" src="https://github.com/user-attachments/assets/20dae243-ff34-4bfe-8c3b-6e68f7f62f12" />
+  <img width="180" alt="8" src="https://github.com/user-attachments/assets/a42b327f-e812-442f-b551-e80bc5e3118f" />
+  <img width="180" alt="9" src="https://github.com/user-attachments/assets/0def8a34-f9f9-4f55-821e-e339068d2b9c" />
+  <img width="180" alt="10" src="https://github.com/user-attachments/assets/03a89109-aae8-4798-b0cb-14c4b0f84b59" />
+  <br/>
+  <img width="180" alt="11" src="https://github.com/user-attachments/assets/c44fb87e-6a93-4c76-8ea2-720241964568" />
+  <img width="180" alt="12" src="https://github.com/user-attachments/assets/8da0d2ef-80d3-4068-a24a-085d25708992" />
+  <img width="180" alt="13" src="https://github.com/user-attachments/assets/9079bc13-ef72-4280-9b05-a04768c931fb" />
+  <img width="180" alt="14" src="https://github.com/user-attachments/assets/2b1b0ca5-b5ce-4f7f-9a71-2332ce268de8" />
+  <img width="180" alt="15" src="https://github.com/user-attachments/assets/d38f4207-b1ef-42ac-a101-147c1389899f" />
 </p>
 
 > 📌 *These are placeholders, laid out horizontally as requested. Upload your real screens to GitHub (drag-and-drop into an issue or the README editor to get `user-attachments` links, same as your other projects) and send me the links — I'll drop them in right away, keeping this same horizontal row.*
@@ -181,7 +193,10 @@ This structure keeps the UI fully decoupled from the test logic and level-evalua
 
 <p align="left">
   <a href="https://github.com/MohamedBoukouch">
-    <img src="https://img.shields.io/badge/GitHub-MohamedBoukouch-181717?style=for-the-badge&logo=github"/>
+    <img width="216" height="44" alt="LOGO" src="https://github.com/user-attachments/assets/3e7fd328-213f-45be-a24f-a8265b54e5ef" />
+
+
+
   </a>
 </p>
 
@@ -200,4 +215,3 @@ This repository contains the source code of the **Skoolution** mobile applicatio
   <br/><br/>
   Built with <img src="https://api.iconify.design/mdi/heart.svg?color=%23E25555" width="16" style="vertical-align:middle"/> using Flutter & GetX
 </p>
-<img width="256" height="256" alt="Skoolution Logo" src="PASTE_YOUR_LOGO_URL_HERE" />
